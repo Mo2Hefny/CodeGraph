@@ -1,4 +1,5 @@
 :root {
+  /*
   --text: #050505;
   --bg: #fafafa;
   --primary: #eab386;
@@ -9,6 +10,18 @@
   --accentcontrast: #ff8f8f;
   --textcontrast: #64d97b;
   --bgcontrast: #64d97b;
+  */
+  --text: #050505;
+  --bg: #fafafa;
+  --primary: #FE7A7D;
+  --secondary: #FEce71;
+  --accent: #11cdee;
+  --primarycontrast: #64d97b;
+  --secondarycontrast: #64d97b;
+  --accentcontrast: #ff8f8f;
+  --textcontrast: #64d97b;
+  --bgcontrast: #64d97b;
+
   --h1: 48px;
   --h2: 32px;
   --subtitle: 24px;
@@ -43,6 +56,14 @@ body {
   justify-content: flex-start;
   align-items: center;
   scroll-behavior: smooth;
+  gap: 6em;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  gap: 6em;
 }
 
 /* nav bar */
@@ -64,7 +85,7 @@ nav .logo {
 }
 
 .color-effect {
-  background: linear-gradient(120deg, var(--primary), var(--accent));
+  background: linear-gradient(120deg, var(--primary), var(--secondary));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -82,21 +103,69 @@ nav .menu {
   transition: 0.5s ease;
 }
 
-.menu-item::after {
-  content: "";
-  width: 0%;
-  height: 3px;
-  margin: auto;
-  display: block;
-  border-radius: 2px;
-  background-color: var(--primary);
-  transition: 0.5s ease;
-}
-
 .menu-item:hover {
-  color: var(--primary);
+  transform: translate(-8px, 4px);
+  box-shadow: 8px -4px var(--accent);
+  background-color: var(--secondary);
 }
 
-.menu-item:hover::after {
+/* hero */
+
+.hero {
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-text {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.hero-text h1 {
+  font-size: var(--h1);
+  color: var(--text);
+}
+
+.subtitles {
+  font-size: var(--subtitle);
+  color: var(--text);
+  margin: 1em 0;
+}
+
+.hero-img {
+  width: 45%;
+  align-self: center;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 2em;
+}
+
+.hero-buttons a {
+  padding: 1em 2em;
+  border-radius: 6px;
+  font-size: var(--p);
+  color: var(--text);
+}
+
+.hero-buttons .primary-button {
+  background-color: var(--primary);
+  color: var(--bg);
+  transition: 0.3s ease;
+}
+
+.secondary-button {
+  transition: 0.3s ease;
+  background-color: var(--secondary);
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translate(0, -3px);
 }
