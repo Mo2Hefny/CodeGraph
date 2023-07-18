@@ -30,11 +30,24 @@
   --small: 14px;
 }
 
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+p {
+  font-size: var(--p);
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -50,13 +63,13 @@ a:active {
 body {
   width: auto !important;
   background-color: var(--bg);
+  color: var(--text);
   margin: 0 5%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  scroll-behavior: smooth;
-  gap: 6em;
+  gap: 5em;
 }
 
 .header {
@@ -106,12 +119,13 @@ nav .menu {
 .menu-item:hover {
   transform: translate(-8px, 4px);
   box-shadow: 8px -4px var(--accent);
-  background-color: var(--secondary);
+  background-color: rgba(254, 206, 113, 0.8);
 }
 
 /* hero */
 
 .hero {
+  margin-top: 3em;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -122,11 +136,6 @@ nav .menu {
   display: flex;
   flex-direction: column;
   gap: 2em;
-}
-
-.hero-text h1 {
-  font-size: var(--h1);
-  color: var(--text);
 }
 
 .subtitles {
@@ -168,4 +177,95 @@ nav .menu {
 .primary-button:hover,
 .secondary-button:hover {
   transform: translate(0, -3px);
+}
+
+/* topics section */
+
+.topics {
+  padding-top: 3em;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4em;
+}
+
+.topics h2 {
+  padding: 0.5em 1em;
+  transition: 0.5s ease;
+}
+
+.topics:hover > h2
+{
+  transform: translate(-8px, 4px);
+  box-shadow: 12px -8px var(--accent);
+  background-color: rgba(254, 206, 113, 0.8);
+}
+
+.topics-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.topics-items {
+  background-color: rgba(254, 206, 113, 0.6);
+  border-radius: 10px;
+  padding: 1em;
+  gap: 2em;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.topic-type {
+  text-align: center;
+  font-size: var(--p);
+}
+
+.topics-items:hover {
+  background-color: rgba(254, 122, 125, 0.6);
+  transform: translate(0, -10px);
+}
+
+.footer {
+  margin-top: 5em;
+  margin-bottom: 5em;
+  padding: 3em 5em;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: var(--text);
+  color: var(--bg);
+}
+
+.footer-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-box .icons {
+  display: flex;
+  justify-content: space-around;
+  gap: 1em;
+}
+
+.fa {
+  color: var(--bg);
+  font-size: var(--p);
+  transition: 0.5s;
+  padding: 0.5em;
+}
+
+a .fa:hover {
+  transform: translate(-8px, 4px);
+  box-shadow: 8px -4px var(--accent);
 }
