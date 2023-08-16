@@ -54,25 +54,14 @@ body {
   background-color: var(--bg);
   color: var(--text);
   margin: 0 5%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 5em;
-}
-
-.header {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100vh;
-  gap: 6em;
 }
 
 /* nav bar */
 
 nav {
   width: 100%;
+  height: 100px;
+  margin-bottom: 5rem;
   padding: 20px 0;
   display: flex;
   flex-direction: row;
@@ -115,30 +104,37 @@ nav .menu {
 /* hero */
 
 .hero {
-  margin-top: 3em;
+  padding: 0 2em;
   width: 100%;
-  display: flex;
+  height: calc(100vh - 100px - 5rem);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2em;
   justify-content: space-between;
 }
 
 .hero-text {
-  width: 50%;
   display: flex;
   flex-direction: column;
+  max-width: 45em;
+  justify-content: center;
   gap: 2em;
 }
 
 .subtitles {
   font-size: var(--subtitle);
   color: var(--text);
-  margin: 1em 0;
+  margin: 1.5em 0 0.5em 0;
 }
 
 .hero-img {
-  width: 45%;
   align-self: center;
   display: flex;
   justify-content: flex-end;
+}
+
+.hero-img > img {
+  width: 100%;
 }
 
 .hero-buttons {
@@ -167,6 +163,40 @@ nav .menu {
 .primary-button:hover,
 .secondary-button:hover {
   transform: translate(0, -3px);
+}
+
+@media (max-width: 70em)
+{
+  .hero-text > h1 {
+    font-size: 42px;
+  }
+
+  .subtitles {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 60em)
+{
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text > h1 {
+    font-size: 48px;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-buttons {
+    align-self: center;
+  }
+
+  .hero-img {
+    display: none;
+  }
 }
 
 /* topics section */
