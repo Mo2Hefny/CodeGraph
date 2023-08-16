@@ -199,7 +199,11 @@ nav .menu {
 }
 
 @media (max-width: 40em) {
+  nav {
+    margin-bottom: 2rem;
+  }
   .hero {
+    min-height: calc(100vh - 100px - 2rem);
     padding: 0 0.5rem;
   }
 
