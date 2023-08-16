@@ -356,6 +356,7 @@ a .fa:hover {
 /* PathFinding */
 
 .content {
+  margin-top: -5em;
   width: 100%;
   height: calc(100vh - 92px);
   border: 2px solid red;
@@ -401,8 +402,15 @@ a .fa:hover {
 }
 
 .animation-controls {
+  padding: 0 5%;
   border: 2px solid red;
   flex: 0;
+  margin: 1em 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5em;
 }
 
 .controls {
@@ -422,4 +430,15 @@ a .fa:hover {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.animation-controls button {
+  background-color: var(--secondary);
+  padding: 8px 16px;
+  color: var(--bg);
+}
+
+.animation-controls button i {
+  padding: 0;
+  padding-right: 9px;
 }
