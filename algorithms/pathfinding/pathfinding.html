@@ -15,74 +15,204 @@
       <a href="../../index.html">Code<span class="color-effect">GRAPH</span></a>
     </div>
     <div class="menu hide">
-      <a href="index.html" class="menu-item">Home</a>
-      <a href="" class="menu-item">Algorithms</a>
+      <a href="../../index.html" class="menu-item">Home</a>
+      <a href="../../index.html#topics" class="menu-item">Algorithms</a>
       <a href="" class="menu-item">About</a>
     </div>
   </nav>
-  <div class="content">
-    <div class="animation-board">
-      <div class="animation-area">
+  <div class="global-Container">
+    <div class="illustration">
+    </div>
+    <div class="animation-box">
+      <div class="instructions">
       </div>
-      <div class="animation-controls">
-        <button id="set-start">Start</button>
-        <button id="set-end">End</button>
-        <button id="set-wall">Wall</button>
-        <button id="start-simulation">Simulate</button>
-        <button id="start-simulation">Reset</button>
+      <div class="animation-area">
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="pass"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell class="start"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="end"></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="pass"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell class="start"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="end"></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="pass"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell class="start"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="end"></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="pass"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell class="start"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="end"></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="pass"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell class="start"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="end"></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="pass"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell class="start"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="end"></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="pass"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell class="start"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="end"></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="pass"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell class="start"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="end"></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="pass"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell class="start"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="end"></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="pass"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell class="start"></cell>
+        <cell></cell>
+        <cell class="wall"></cell>
+        <cell></cell>
+        <cell class="end"></cell>
       </div>
     </div>
     <div class="controls">
-      <button>DFS</button>
-      <button>BFS</button>
-      <button>Dijkstra</button>
-      <button>A* search</button>
+      <div class="algorithm-selection sub">
+        <button>DFS</button>
+        <button>BFS</button>
+        <button>Dijkstra</button>
+        <button>A* search</button>
+      </div>
+      <div class="animation-controls">
+        <div class="sub">
+          <button id="set-start">Start</button>
+          <button id="set-end">End</button>
+          <button id="set-wall">Wall</button>
+        </div>
+        <input type="range" min="0.25" max="3" value="1" step="0.25">
+        <div class="sub">
+          <button id="start-simulation">Simulate</button>
+          <button id="start-simulation">Reset</button>
+        </div>
+      </div>
     </div>
   </div>
   <script src="../js/pathfinding.js"></script>
   <div class="footer">
-    <div class="footer-upper">
-      <div class="contact container">
-        <h3 class="sub">Feedback? Suggestions? Want a new feature?</h3>
-        <div class="icons sub">
-          <span class="color-effect-contrast">Contact me!</span>
-          <a href="" target="_blank"><i class="fa fa-twitter"></i></a>
-          <a href="mailto:moamensaied1@gmail.com" target="_blank"><i class="fa fa-envelope"></i>
+      <div class="footer-upper">
+        <div class="logo">
+          <a href="index.html">Code<span class="color-effect">GRAPH</span></a>
         </div>
-      </div>
-      <div class="container extras">
-        <div class="logo sub">
-          <a href="../../index.html">Code<span class="color-effect">GRAPH</span></a>
+        <div class="feedback container">
+          <h3>Feedback? Suggestions? Want a new feature?</h3>
+          <p class="color-effect-contrast">
+            Contact me!
+            <span class="icons sub">
+              <a href="" target="_blank"><i class="fa fa-instagram"></i></a>
+              <a href="mailto:moamensaied1@gmail.com" target="_blank"
+                ><i class="fa fa-envelope"></i
+              ></a>
+            </span>
+          </p>
+        </div>
+        <div class="connect container">
+          <h3>Let's Connect!</h3>
+          <span class="icons sub color-effect-contrast">
+            <a href="" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://github.com/Mo2Hefny" target="_blank"
+              ><i class="fa fa-github"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/mohefny04/" target="_blank"
+              ><i class="fa fa-linkedin"></i
+            ></a>
+          </span>
         </div>
         <div class="attribution">
           <p>
             Icon made by
-            <a target="_blank" href="https://www.flaticon.com/authors/paul-j">Paul J.</a>
+            <a target="_blank" href="https://www.flaticon.com/authors/paul-j"
+              >Paul J.</a
+            >
             &nbsp;from
-            <a target="_blank" href="https://www.flaticon.com/">www.flaticon.com</a>
+            <a target="_blank" href="https://www.flaticon.com/"
+              >www.flaticon.com</a
+            >
           </p>
           <p>
             Icon made by
-            <a target="_blank" href="https://www.flaticon.com/authors/freepik">Freepik</a>
+            <a target="_blank" href="https://www.flaticon.com/authors/freepik"
+              >Freepik</a
+            >
             &nbsp;from
-            <a target="_blank" href="https://www.flaticon.com/">www.flaticon.com</a>
+            <a target="_blank" href="https://www.flaticon.com/"
+              >www.flaticon.com</a
+            >
           </p>
         </div>
       </div>
-    </div>
-    <div class="separator"></div>
-    <div class="footer-box">
-      <div class="sub info">
-        <p>Made with
-          <span><i class="fa fa-heart"></i> </span> by<b> Moamen Hefny </b>
-        <div class="icons">
-          <a href="https://github.com/Mo2Hefny" target="_blank"><i class="fa fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/mohefny04/" target="_blank"><i class="fa fa-linkedin"></i></a>
-        </div>
+      <div class="separator"></div>
+      <div class="footer-box">
+        <p class="sub">
+          Made with <span><i class="fa fa-heart"></i> </span> by<b>
+            Moamen Hefny
+          </b>
+        </p>
+        <p class="sub copyright">Copyright &copy; 2023 All Rights Reserved</p>
       </div>
-      <p class="sub copyright">Copyright &copy; 2023 All Rights Reserved</p>
     </div>
-  </div>
 </body>
 
 </html>
