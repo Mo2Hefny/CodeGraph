@@ -27,106 +27,7 @@
       <div class="instructions">
       </div>
       <div class="animation-area">
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="pass"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell class="start"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="end"></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="pass"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell class="start"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="end"></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="pass"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell class="start"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="end"></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="pass"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell class="start"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="end"></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="pass"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell class="start"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="end"></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="pass"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell class="start"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="end"></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="pass"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell class="start"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="end"></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="pass"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell class="start"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="end"></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="pass"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell class="start"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="end"></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="pass"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell class="start"></cell>
-        <cell></cell>
-        <cell class="wall"></cell>
-        <cell></cell>
-        <cell class="end"></cell>
+        
       </div>
     </div>
     <div class="controls">
@@ -142,7 +43,10 @@
           <button id="set-end">End</button>
           <button id="set-wall">Wall</button>
         </div>
-        <input type="range" min="0.25" max="3" value="1" step="0.25">
+        <p class="speed-value"></p>
+        <input type="range" id="speed-range" min="0.25" max="3" value="1" step="0.25">
+        <p class="size-value"></p>
+        <input type="range" id="size-range" min="10" max="30" value="20" step="5">
         <div class="sub">
           <button id="start-simulation">Simulate</button>
           <button id="start-simulation">Reset</button>
