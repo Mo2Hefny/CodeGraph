@@ -59,6 +59,15 @@ body {
   flex-direction: column;
 }
 
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.color-effect::selection {
+  -webkit-text-fill-color: var(--bg);
+}
+
 /* nav bar */
 
 nav {
@@ -330,8 +339,8 @@ nav .menu {
   color: var(--bg);
 }
 
-.color-effect-contrast,
-.color-effect-contrast i {
+.color-effect.contrast,
+.color-effect.contrast i {
   background: linear-gradient(120deg, var(--primarycontrast), var(--accent));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
