@@ -284,33 +284,6 @@ nav .menu {
   height: 10px;
 }
 
-.underline::after {
-  transition: 0.3s ease-in-out;
-  position: absolute;
-  z-index: 1;
-  top: 100%;
-  left: 50%;
-  translate: -50%;
-  content: "";
-  width: 80%;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--text);
-}
-
-.underline::before {
-  box-sizing: border-box;
-  position: absolute;
-  z-index: 2;
-  top: 100%;
-  left: 50%;
-  translate: -50% -50%;
-  content: "";
-  border: 2px solid var(--text);
-  width: 10px;
-  height: 10px;
-}
-
 @media (max-width: 50em) {
   #menu {
     display: none;
