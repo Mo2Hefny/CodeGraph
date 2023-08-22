@@ -3,17 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--fonts & icons-->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <!--css & title styling-->
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="icon" type="image/png" href="./img/unstructured-data.png" />
     <title>CodeGRAPH</title>
-  </head>
-
-  <body>
     <script src="./js/script.js"></script>
+  </head>
+  <body>
+    <!--header-->
     <nav class="header">
       <div class="logo">
         <a href="#hero">Code<span class="color-effect">GRAPH</span></a>
@@ -32,12 +34,34 @@
         </div>
       </div>
     </nav>
+    <!--mobile menu-->
     <div class="hamburger-items">
-      <a href="#hero" class="hamburger-menu-item side-line square" onclick="toggleMenu()">Home</a>
-      <a href="#topics" class="hamburger-menu-item side-line diamond" onclick="toggleMenu()">Algorithms</a>
-      <a href="#about" class="hamburger-menu-item side-line circle" onclick="toggleMenu()">About</a>
-      <a href="#contact" class="hamburger-menu-item side-line rectangle" onclick="toggleMenu()">Contact</a>
+      <a
+        href="#hero"
+        class="hamburger-menu-item side-line square"
+        onclick="toggleMenu()"
+        >Home</a
+      >
+      <a
+        href="#topics"
+        class="hamburger-menu-item side-line diamond"
+        onclick="toggleMenu()"
+        >Algorithms</a
+      >
+      <a
+        href="#about"
+        class="hamburger-menu-item side-line circle"
+        onclick="toggleMenu()"
+        >About</a
+      >
+      <a
+        href="#contact"
+        class="hamburger-menu-item side-line rectangle"
+        onclick="toggleMenu()"
+        >Contact</a
+      >
     </div>
+    <!--hero-->
     <div class="hero" id="hero">
       <div class="hero-text">
         <h1>
@@ -57,6 +81,7 @@
         <img src="./img/unstructured-data.png" alt="unstructured data" />
       </div>
     </div>
+    <!--topics-->
     <div class="topics" id="topics">
       <h1 class="diamond underline">Topics</h1>
       <div class="topics-container">
@@ -80,6 +105,7 @@
         </div>
       </div>
     </div>
+    <!--footer-->
     <div class="footer">
       <div class="footer-upper">
         <div class="logo">
