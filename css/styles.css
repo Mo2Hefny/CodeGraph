@@ -204,6 +204,20 @@ nav .menu {
   background-color: var(--text);
 }
 
+.hamburger-icon.open span:nth-child(1) {
+  rotate: 45deg;
+  translate: 0 10px;
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  display: none;
+}
+
+.hamburger-icon.open span:nth-child(3) {
+  rotate: -45deg;
+  translate: 0 -10px;
+}
+
 .hamburger-items {
   position: fixed;
   z-index: 99;
