@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--fonts & icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!--css & title styling-->
+    <link rel="icon" type="image/png" href="./img/unstructured-data.png" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <title>CodeGRAPH: Pathfinding</title>
+    <script src="../assets/js/main.bundle.js"></script>
+  </head>
+  <body>
+    <!--header-->
+    <nav class="header">
+      <div class="logo">
+        <a href="../../index.html">Code<span class="color-effect">GRAPH</span></a>
+      </div>
+      <div class="menu" id="menu">
+        <a href="../../index.html" class="menu-item underline square">Home</a>
+        <a href="#topics" class="menu-item underline diamond">Algorithms</a>
+        <a href="#about" class="menu-item underline circle">About</a>
+        <a href="#contact" class="menu-item underline rectangle">Contact</a>
+      </div>
+      <div class="hamburger-menu" id="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+    <!--mobile menu-->
+    <div class="hamburger-items">
+      <a
+        href="../../index.html"
+        class="hamburger-menu-item side-line square"
+        onclick="toggleMenu()"
+        >Home</a
+      >
+      <a
+        href="#topics"
+        class="hamburger-menu-item side-line diamond"
+        onclick="toggleMenu()"
+        >Algorithms</a
+      >
+      <a
+        href="#about"
+        class="hamburger-menu-item side-line circle"
+        onclick="toggleMenu()"
+        >About</a
+      >
+      <a
+        href="#contact"
+        class="hamburger-menu-item side-line rectangle"
+        onclick="toggleMenu()"
+        >Contact</a
+      >
+    </div>
+    <!--global container-->
+    <div class="global-Container">
+      <div class="illustration"></div>
+      <div class="animation-box">
+        <div class="instructions"></div>
+        <div class="animation-area"></div>
+      </div>
+      <div class="controls">
+        <div class="algorithm-selection sub">
+          <button>DFS</button>
+          <button>BFS</button>
+          <button>Dijkstra</button>
+          <button>A* search</button>
+        </div>
+        <div class="animation-controls">
+          <div class="sub">
+            <button class="cell-type" id="set-start">Start</button>
+            <button class="cell-type" id="set-end">End</button>
+            <button class="cell-type" id="set-wall">Wall</button>
+          </div>
+          <p class="speed-value"></p>
+          <input
+            type="range"
+            id="speed-range"
+            min="0.25"
+            max="3"
+            value="1"
+            step="0.25"
+          />
+          <p class="size-value"></p>
+          <input
+            type="range"
+            id="size-range"
+            min="10"
+            max="30"
+            value="20"
+            step="5"
+          />
+          <div class="sub">
+            <button id="start-simulation">Simulate</button>
+            <button id="reset-simulation">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../assets/js/pathfinding.bundle.js"></script>
+    <!--footer-->
+    <div class="footer">
+      <div class="footer-upper">
+        <div class="logo">
+          <a href="../../index.html">Code<span class="color-effect">GRAPH</span></a>
+        </div>
+        <div class="feedback container">
+          <h3>Feedback? Suggestions? Want a new feature?</h3>
+          <p class="color-effect contrast">
+            Contact me!
+            <span class="icons sub">
+              <a href="" target="_blank"><i class="fa fa-instagram"></i></a>
+              <a href="mailto:moamensaied1@gmail.com" target="_blank"
+                ><i class="fa fa-envelope"></i
+              ></a>
+            </span>
+          </p>
+        </div>
+        <div class="connect container" id="contact">
+          <h3>Let's Connect!</h3>
+          <span class="icons sub color-effect contrast">
+            <a href="" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://github.com/Mo2Hefny" target="_blank"
+              ><i class="fa fa-github"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/mohefny04/" target="_blank"
+              ><i class="fa fa-linkedin"></i
+            ></a>
+          </span>
+        </div>
+        <div class="attribution">
+          <p>
+            Icon made by
+            <a target="_blank" href="https://www.flaticon.com/authors/paul-j"
+              >Paul J.</a
+            >
+            &nbsp;from
+            <a target="_blank" href="https://www.flaticon.com/"
+              >www.flaticon.com</a
+            >
+          </p>
+          <p>
+            Icon made by
+            <a target="_blank" href="https://www.flaticon.com/authors/freepik"
+              >Freepik</a
+            >
+            &nbsp;from
+            <a target="_blank" href="https://www.flaticon.com/"
+              >www.flaticon.com</a
+            >
+          </p>
+        </div>
+      </div>
+      <div class="separator"></div>
+      <div class="footer-box">
+        <p class="sub">
+          Made with <span><i class="fa fa-heart"></i> </span> by<b>
+            Moamen Hefny
+          </b>
+        </p>
+        <p class="sub copyright">Copyright &copy; 2023 All Rights Reserved</p>
+      </div>
+    </div>
+  </body>
+</html>
