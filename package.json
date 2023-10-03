@@ -1,0 +1,19 @@
+{
+  "name": "CodeGraph",
+  "private": true,
+  "repository": {
+    "url": "git+https://github.com/Mo2Hefny/CodeGraph.git"
+  },
+  "scripts": {
+    "build": "webpack --mode=development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "css-loader": "^6.8.1",
+    "gh-pages": "^6.0.0",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
