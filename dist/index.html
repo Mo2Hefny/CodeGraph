@@ -11,7 +11,6 @@
     <!--css & title styling-->
     <link rel="icon" type="image/png" href="./assets/img/unstructured-data.png" />
     <title>CodeGRAPH</title>
-    <script src="./assets/js/main.bundle.js"></script>
   </head>
   <body>
     <!--header-->
@@ -26,7 +25,7 @@
         <a href="#contact" class="menu-item underline rectangle">Contact</a>
       </div>
       <div class="hamburger-menu" id="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
+        <div class="hamburger-icon" id="hamburger-icon">
           <span></span>
           <span></span>
           <span></span>
@@ -34,29 +33,25 @@
       </div>
     </nav>
     <!--mobile menu-->
-    <div class="hamburger-items">
+    <div class="hamburger-items" id="hamburger-items">
       <a
         href="#hero"
         class="hamburger-menu-item side-line square"
-        onclick="toggleMenu()"
         >Home</a
       >
       <a
         href="#topics"
         class="hamburger-menu-item side-line diamond"
-        onclick="toggleMenu()"
         >Algorithms</a
       >
       <a
         href="#about"
         class="hamburger-menu-item side-line circle"
-        onclick="toggleMenu()"
         >About</a
       >
       <a
         href="#contact"
         class="hamburger-menu-item side-line rectangle"
-        onclick="toggleMenu()"
         >Contact</a
       >
     </div>
@@ -167,5 +162,6 @@
         <p class="sub copyright">Copyright &copy; 2023 All Rights Reserved</p>
       </div>
     </div>
+    <script src="./assets/js/main.bundle.js"></script>
   </body>
 </html>
