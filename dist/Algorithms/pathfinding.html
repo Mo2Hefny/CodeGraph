@@ -9,8 +9,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <!--css & title styling-->
-    <link rel="icon" type="image/png" href="./img/unstructured-data.png" />
-    <title>CodeGRAPH: Pathfinding</title>
+    <link rel="icon" type="image/png" href="../assets/img/unstructured-data.png" />
+    <title>Pathfinding | CodeGraph</title>
   </head>
   <body>
     <!--header-->
@@ -60,7 +60,7 @@
       <div class="illustration"></div>
       <div class="animation-box">
         <div class="instructions"></div>
-        <div class="animation-area"></div>
+        <div class="animation-area" id="grid"></div>
       </div>
       <div class="controls">
         <div class="algorithm-selection sub">
@@ -71,11 +71,17 @@
         </div>
         <div class="animation-controls">
           <div class="sub">
+            <input type="radio" name="cell-type" id="start">
+            <label for="start">Start</label>
+            <input type="radio" name="cell-type" id="end">
+            <label for="end">End</label>
+            <input type="radio" name="cell-type" id="wall" checked>
+            <label for="wall">Wall</label>
             <button class="cell-type" id="set-start">Start</button>
             <button class="cell-type" id="set-end">End</button>
             <button class="cell-type" id="set-wall">Wall</button>
           </div>
-          <p class="speed-value"></p>
+          <label for="speed-range">Speed</label>
           <input
             type="range"
             id="speed-range"
@@ -84,7 +90,8 @@
             value="1"
             step="0.25"
           />
-          <p class="size-value"></p>
+          <p class="speed-value"></p> 
+          <label for="size-range">Size</label>
           <input
             type="range"
             id="size-range"
@@ -93,6 +100,7 @@
             value="20"
             step="5"
           />
+          <p class="size-value"></p>
           <div class="sub">
             <button id="start-simulation">Simulate</button>
             <button id="reset-simulation">Reset</button>
@@ -100,6 +108,11 @@
         </div>
       </div>
     </div>
+    <!--
+    <script src="../../src/js/algorithms/cell.js" type="module"></script>
+    <script src="../../src/js/algorithms/grid.js" type="module"></script>
+    <script src="../../src/js/algorithms/pathfinding.js" type="module"></script>
+    -->
     <script src="../assets/js/pathfinding.bundle.js"></script>
     <!--footer-->
     <div class="footer">
