@@ -117,3 +117,11 @@ Wall
 .end {
   background-color: var(--primary);
 }
+
+.cell.check {
+  background-color: var(--accentlight);
+}
+
+.cell.visited {
+  background-color: var(--accent);
+}

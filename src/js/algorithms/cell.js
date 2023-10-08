@@ -31,6 +31,17 @@ export default class Cell {
     return this.#position;
   }
 
+  checkCell() {
+    if (["start", "end"].includes(this.type)) return;
+    this.element.classList.add('check');
+  }
+
+  visitCell() {
+    if (["start", "end"].includes(this.type)) return;
+    this.element.classList.remove('check');
+    this.element.classList.add('visited');
+  }
+
   updateBorder(cells) {
     const x = this.#position.x;
     const y = this.#position.y;
