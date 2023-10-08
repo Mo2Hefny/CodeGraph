@@ -1,12 +1,12 @@
 import Cell from "./cell.js";
 
-const NORMAL_SPEED = 200;
+const NORMAL_SPEED = 100;
 
 export const Grid = (() => {
   const grid = document.getElementById("grid");
   let cells = [];
   let visited = [];
-  let startPosition;
+  let startPosition = undefined;
   let gridSize;
   let simulationSpeed;
   let mouseDown = false;
@@ -27,6 +27,7 @@ export const Grid = (() => {
 
   function setSpeed(speed) {
     simulationSpeed = NORMAL_SPEED / speed;
+    console.log(`Ruler value: ${speed} Simulation Speed: ${simulationSpeed}`);
   }
 
   function setSelectedMode() {
@@ -65,9 +66,18 @@ export const Grid = (() => {
       selectedCellType.indexOf("-") + 1
     );
     if (["start", "end"].includes(cellType)) {
-      const cell = grid.querySelector(`.${cellType}`);
-      if (cellType === "start") startPosition = position;
-      if (cell != undefined) cell.classList.remove(`${cellType}`);
+      cells.forEach((row) => {
+        row.forEach((cell) => {
+          if (cell.type === cellType)
+            cell.type = "empty";
+            cell.element.classList.remove(`${cellType}`);
+        });
+      });
+      if (cellType === "start") {
+        if (startPosition != undefined)
+          cells[startPosition.y][startPosition.x].updateBorder(cells);
+        startPosition = position;
+      }
     }
     setCellType(position, cellType, event.type === "mousedown");
     cells[position.y][position.x].updateBorder(cells);
@@ -89,8 +99,7 @@ export const Grid = (() => {
   function setCellType(point, type, clicked) {
     const x = point.x;
     const y = point.y;
-    if (clicked)
-      remove = cells[y][x].element.classList.contains(type);
+    if (clicked) remove = cells[y][x].element.classList.contains(type);
     if (remove) {
       cells[y][x].element.classList = "cell";
       cells[y][x].type = "empty";
@@ -105,43 +114,72 @@ export const Grid = (() => {
     for (let i = 0; i < gridSize; i++) {
       visited[i] = [];
       for (let j = 0; j < gridSize; j++) {
-        visited[i][j] = false;
+        visited[i][j] = cells[i][j].type === "wall";
       }
     }
-
-    BFS();
+    console.log(`Starting simulation with speed of ${simulationSpeed}`);
+    return BFS();
   };
 
   const BFS = async () => {
     const queue = [];
     queue.push(startPosition);
     visited[startPosition.y][startPosition.x] = true;
-    const dx = [1, 0, -1, 0];
-    const dy = [0, 1, 0, -1];
+    cells[startPosition.y][startPosition.x].parent = undefined;
+    const dx = [1, 0, -1, 0, 1, 1, -1, -1];
+    const dy = [0, 1, 0, -1, -1, 1, 1, -1];
     let found = false;
+    let position;
     while (queue.length > 0) {
-      const position = queue.shift();
-      cells[position.y][position.x].visitCell();
-      console.log(`checking (${position.x}, ${position.y})`);
+      position = queue.shift();
+      const X = position.x;
+      const Y = position.y;
+      cells[Y][X].visitCell();
+      console.log(`checking (${X}, ${Y})`);
 
       // Found the end.
-      if (cells[position.y][position.x].type === "end") {
+      if (cells[Y][X].type === "end") {
         found = true;
         break;
       }
       // Add adjacent cells.
       for (let i = 0; i < dx.length; i++) {
-        const x = position.x + dx[i];
-        const y = position.y + dy[i];
+        const x = X + dx[i];
+        const y = Y + dy[i];
+        // Out of borders
         if (x < 0 || y < 0 || x >= gridSize || y >= gridSize) continue;
-        if (visited[y][x] || cells[y][x].type === "wall") continue;
+        // Wall or visited
+        if (visited[y][x] === true || cells[y][x].type === "wall") continue;
+        // Can't cut walls diagonally
+        if (
+          i === 4 &&
+          (cells[Y + dy[3]][X + dx[3]].type === "wall" && cells[Y + dy[0]][X + dx[0]].type === "wall")
+        )
+          continue;
+        if (
+          i === 5 &&
+          (cells[Y + dy[0]][X + dx[0]].type === "wall" && cells[Y + dy[1]][X + dx[1]].type === "wall")
+        )
+          continue;
+        if (
+          i === 6 &&
+          (cells[Y + dy[2]][X + dx[2]].type === "wall" && cells[Y + dy[1]][X + dx[1]].type === "wall")
+        )
+          continue;
+        if (
+          i === 7 &&
+          (cells[Y + dy[2]][X + dx[2]].type === "wall" && cells[Y + dy[3]][X + dx[3]].type === "wall")
+        )
+          continue;
         cells[y][x].checkCell();
+        cells[y][x].parent = position;
         visited[y][x] = true;
-        queue.push({x, y});
+        queue.push({ x, y });
         await delay(simulationSpeed);
       }
-      await delay(simulationSpeed);
     }
+
+    if (found) cells[position.y][position.x].setPath(cells);
     console.log(`found ${found}`);
   };
 

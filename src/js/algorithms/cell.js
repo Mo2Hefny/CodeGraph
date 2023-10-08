@@ -4,6 +4,7 @@ export default class Cell {
   #role;
   #position;
   element;
+  #parentPosition
   constructor(row, col) {
     this.#role = "empty";
     this.#position = { x: col, y: row };
@@ -18,6 +19,14 @@ export default class Cell {
     return this.#role;
   }
 
+  set parent(parent) {
+    this.#parentPosition = parent;
+  }
+
+  get parent() {
+    return this.#parentPosition;
+  }
+  
   #createCellElement() {
     const block = document.createElement("div");
     block.classList.add("cell");
@@ -40,6 +49,13 @@ export default class Cell {
     if (["start", "end"].includes(this.type)) return;
     this.element.classList.remove('check');
     this.element.classList.add('visited');
+  }
+
+  setPath(cells) {
+    if (this.#parentPosition === undefined) return;
+    this.element.classList.remove('visited');
+    this.element.classList.add('path');
+    cells[this.#parentPosition.y][this.#parentPosition.x].setPath(cells);
   }
 
   updateBorder(cells) {

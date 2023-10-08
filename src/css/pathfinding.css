@@ -110,7 +110,8 @@ Wall
   border-top-left-radius: 20%;
 }
 
-.start {
+.start,
+.end.path {
   background-color: var(--primarycontrast);
 }
 
@@ -118,10 +119,16 @@ Wall
   background-color: var(--primary);
 }
 
-.cell.check {
+.check {
   background-color: var(--accentlight);
+  box-shadow: inset 1px 1px 3px #cacaca,
+  inset -1px -1px 1px #05050520;
 }
 
-.cell.visited {
+.visited {
   background-color: var(--accent);
+}
+
+.path {
+  background-color: var(--primarycontrastlight);
 }
