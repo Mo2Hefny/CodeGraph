@@ -8,12 +8,15 @@ export const Grid = (() => {
   let visited = [];
   let startPosition = undefined;
   let gridSize;
-  let simulationSpeed;
-  let mouseDown = false;
   let selectedCellType = document
-    .querySelector('input[type="radio"][name="cell-type"]:checked')
-    .getAttribute("id");
+  .querySelector('input[type="radio"][name="cell-type"]:checked')
+  .getAttribute("id");
   let remove = false;
+  // Simulation
+  let startedSimulation = false;
+  let simulationSpeed;
+  
+  let mouseDown = false;
   grid.addEventListener("mousedown", () => {
     mouseDown = true;
   });
@@ -110,6 +113,8 @@ export const Grid = (() => {
   }
 
   const startSimulation = async () => {
+    if (startedSimulation)  return;
+    startedSimulation = true;
     visited = [];
     for (let i = 0; i < gridSize; i++) {
       visited[i] = [];
@@ -118,7 +123,7 @@ export const Grid = (() => {
       }
     }
     console.log(`Starting simulation with speed of ${simulationSpeed}`);
-    return BFS();
+    await BFS();
   };
 
   const BFS = async () => {
@@ -175,8 +180,8 @@ export const Grid = (() => {
         cells[y][x].parent = position;
         visited[y][x] = true;
         queue.push({ x, y });
-        await delay(simulationSpeed);
       }
+      await delay(10);
     }
 
     if (found) cells[position.y][position.x].setPath(cells);

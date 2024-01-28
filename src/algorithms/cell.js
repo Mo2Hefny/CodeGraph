@@ -1,4 +1,4 @@
-import "../../css/pathfinding.css";
+//import "../../css/pathfinding.css";
 
 export default class Cell {
   #role;

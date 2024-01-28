@@ -1,0 +1,241 @@
+/* nav bar */
+
+nav .logo {
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.color-effect {
+  background: linear-gradient(120deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav .menu {
+  gap: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-item {
+  position: relative;
+  font-size: var(--sub);
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+  scale: 1.2;
+  box-shadow: 1px 1px 5px #99999950,
+  -1px -1px 5px #fff;
+  background-color: #f7f7f7;
+}
+
+.underline::after {
+  transition: 0.3s ease-in-out;
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  translate: -50%;
+  content: "";
+  width: 80%;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text);
+}
+
+.underline::before {
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  left: 50%;
+  translate: -50% -40%;
+  content: "";
+  border: 2px solid var(--text);
+  width: 10px;
+  height: 10px;
+}
+
+.circle::before {
+  border-radius: 100%;
+  background-color: var(--secondary);
+}
+
+.diamond::before {
+  translate: -50% calc(-50% + 1px);
+  rotate: 45deg;
+  border-radius: 2px;
+  background-color: var(--primary);
+}
+
+.square::before {
+  border-radius: 3px;
+  background-color: var(--accent);
+}
+
+.rectangle::before {
+  width: 14px;
+  border-radius: 3px;
+  background-color: var(--primarycontrast);
+}
+
+.circle::after,
+.square::after {
+  width: 16px;
+}
+
+.diamond::after {
+  width: 18px;
+}
+
+.rectangle::after {
+  width: 20px;
+}
+
+.menu-item:hover:before {
+  transition: 0.5s ease-in-out;
+}
+
+.menu-item:hover::after {
+  width: 80%;
+}
+
+/* Mobile menu */
+
+.hamburger-menu {
+  display: none;
+}
+
+.hamburger-icon {
+  width: 32px;
+  height: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.hamburger-icon > span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--text);
+}
+
+.hamburger-icon.open span:nth-child(1) {
+  rotate: 45deg;
+  translate: 0 10px;
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  display: none;
+}
+
+.hamburger-icon.open span:nth-child(3) {
+  rotate: -45deg;
+  translate: 0 -10px;
+}
+
+.hamburger-items {
+  position: fixed;
+  z-index: 99;
+  top: 100px;
+  right: 0;
+  width: 0;
+  height: calc(100vh - 100px);
+  padding: 1em 0 1em 0.5em;
+  overflow: hidden;
+  transition: 0.3s ease;
+  background: var(--bg);
+  display: none;
+  flex-direction: column;
+  gap: 1em;
+  box-shadow: -1px 0px 10px #99999930;
+}
+
+.hamburger-items > a {
+  position: relative;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  padding: 0.5rem 2rem;
+  transition: 0.2s ease-in;
+  font-size: var(--p);
+  font-weight: 500;
+  display: flex;
+}
+
+.side-line::before {
+  box-sizing: border-box;
+  position: absolute;
+  align-self: center;
+  z-index: 2;
+  left: 0.4rem;
+  translate: 50%;
+  content: "";
+  border: 2px solid var(--text);
+  width: 10px;
+  height: 10px;
+}
+
+.side-line::after {
+  transition: 0.3s ease-in-out;
+  position: absolute;
+  align-self: center;
+  z-index: 1;
+  left: 1rem;
+  rotate: 90deg;
+  translate: -50%;
+  content: "";
+  height: 2px;
+  border-radius: 2px;
+  background: var(--text);
+}
+
+.hamburger-items > .side-line:hover::after {
+  scale: 1.1;
+}
+
+.hamburger-items > .circle:hover {
+  background-color: var(--secondarylight);
+}
+
+.hamburger-items > .square:hover {
+  background-color: var(--accentlight);
+}
+
+.hamburger-items > .diamond:hover {
+  background-color: var(--primarylight);
+}
+
+.hamburger-items > .rectangle:hover {
+  background-color: var(--primarycontrastlight);
+}
+
+.hamburger-items > a:active {
+  box-shadow: inset 1px 1px 3px #05050550,
+  -1px -1px 3px #f7f7f750;
+  translate: 2px 2px;
+}
+
+.hamburger-items.open {
+  width: 200px;
+}
+
+@media (max-width: 60em) {
+  #menu {
+    display: none;
+  }
+
+  #hamburger-menu {
+    display: block;
+    position: relative;
+  }
+  
+  .hamburger-items {
+    display: flex;
+  }
+}

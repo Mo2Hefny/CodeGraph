@@ -1,0 +1,154 @@
+/* Footer.css */
+
+.footer *::selection {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.footer .color-effect::selection {
+  -webkit-text-fill-color: var(--text);
+}
+
+.footer {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  padding: 3rem 5rem;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  background: var(--text);
+  color: var(--bg);
+}
+
+.footer-upper {
+  width: 100%;
+  min-height: 10rem;
+  display: grid;
+  grid-template-columns: 4fr 3fr 3fr;
+  gap: 1rem;
+}
+
+.footer h3 {
+  font-size: var(--subtitle);
+}
+
+.footer p {
+  font-size: var(--small);
+}
+
+.footer-upper .logo {
+  grid-column-start: 3;
+  justify-self: flex-end;
+  padding: 0.5rem;
+}
+
+.footer-upper .logo a {
+  font-size: var(--h2);
+  color: var(--bg);
+}
+
+.color-effect.contrast,
+.color-effect.contrast i {
+  background: linear-gradient(120deg, var(--primarycontrast), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer .container {
+  padding: 0.5rem;
+  grid-row: 1 / span 2;
+}
+
+.icons .fa {
+  font-size: var(--p);
+  transition: 0.5s;
+  padding: 0.5rem;
+}
+
+.icons .fa:hover {
+  transform: translate(-6px, 3px);
+  box-shadow: 6px -3px var(--accent);
+}
+
+.attribution {
+  grid-column: 2 / span 2;
+  padding-right: 0.5rem;
+  margin-top: 2rem;
+  align-self: flex-end;
+  opacity: 0.6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.footer .attribution p {
+  font-size: 10px;
+}
+
+.attribution a {
+  color: var(--primarycontrast);
+}
+
+.separator {
+  margin-top: 1rem;
+  width: 95%;
+  height: 1px;
+  background-color: var(--bg);
+  opacity: 0.3;
+}
+
+.footer-box {
+  padding: 0 0.5rem;
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 60em) {
+  .footer .feedback {
+    width: 100%;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+  .footer .connect {
+    grid-row-start: 2;
+    grid-column: 1;
+  }
+}
+
+@media (max-width: 50em) {
+  .footer-upper {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-upper .logo {
+    justify-self: flex-start;
+  }
+
+  .footer .footer-upper div {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .footer-box {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 40em) {
+  .footer {
+    padding: 2rem 10%;
+  }
+
+  .footer h3 {
+    font-size: 20px;
+  }
+}

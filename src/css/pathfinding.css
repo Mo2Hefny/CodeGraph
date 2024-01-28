@@ -13,7 +13,6 @@
   position: relative;
   height: auto;
   aspect-ratio: 1 / 1;
-  
 }
 
 .cell:not(.wall) {
@@ -31,23 +30,7 @@
   background: #05050520;
 }
 
-.start {
-  background-color: var(--primarycontrast);
-  border-right: 2px solid #7a7a7a;
-  border-left: 2px solid #cacaca;
-  border-bottom: 2px solid #cacaca;
-  border-top: 2px solid #7a7a7a;
-}
-
-.end {
-  background-color: var(--primary);
-  border-right: 2px solid #7a7a7a;
-  border-left: 2px solid #cacaca;
-  border-bottom: 2px solid #cacaca;
-  border-top: 2px solid #7a7a7a;
-}
-
-.pass{
+.cell.pass{
   border: 2px solid var(--accent);
   background-color: var(--accentlight);
   box-shadow: inset 2px -4px 4px #d0e6e9,
@@ -110,14 +93,30 @@ Wall
   border-top-left-radius: 20%;
 }
 
-.start,
+/*
+  Start
+*/
+
+.cell.start,
 .end.path {
   background-color: var(--primarycontrast);
+  border: 2px solid #05050520;
+  box-shadow: inset 1px 1px 3px #3c944e,
+  inset -1px -1px 3px var(--primarycontrastlight);
+
 }
 
-.end {
+/*
+  End
+*/
+
+.cell.end:not(.path) {
   background-color: var(--primary);
+  border: 2px solid #ff9394;
+  box-shadow: inset 1px 1px 3px #be3c3e,
+  inset -1px -1px 3px #ff9394;
 }
+
 
 .check {
   background-color: var(--accentlight);

@@ -1,0 +1,70 @@
+:root {
+  --text: #050505;
+  --bg: #fafafa;
+  --primary: #fe7a7d;
+  --primarylight: #ff9fa1;
+  --secondary: #fece71;
+  --secondarylight: #fcdea2;
+  --accent: #11cdee;
+  --accentlight: #98EAF9;
+  --primarysection: #999999;
+  --primarycontrast: #64d97b;
+  --primarycontrastlight: #98f1aa;
+  --accentcontrast: #ff8f8f;
+
+  --h1: 3rem;
+  --h2: 2rem;
+  --subtitle: 1.5rem;
+  --p: 18px;
+  --sub: 1rem;
+  --small: 14px;
+}
+
+h1 {
+  font-size: var(--h1);
+}
+
+h2 {
+  font-size: var(--h2);
+}
+
+p {
+  font-size: var(--p);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+
+a:hover,
+a:active {
+  color: var(--text);
+}
+
+body {
+  position: relative;
+  width: auto !important;
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.color-effect::selection {
+  -webkit-text-fill-color: var(--bg);
+}
